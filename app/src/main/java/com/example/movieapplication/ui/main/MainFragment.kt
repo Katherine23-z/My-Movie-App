@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieapplication.MainActivity
 import com.example.movieapplication.R
 import com.example.movieapplication.Repository
 import com.example.movieapplication.databinding.MainFragmentBinding
@@ -20,6 +21,7 @@ class MainFragment : Fragment(){
     }
 
     private lateinit var viewModel: MainViewModel
+    private lateinit var navigation: Navigation
     private var _binding : MainFragmentBinding? = null
     private val binding get() = _binding!!
     private val horrorList = Repository.getMovieList()
@@ -44,7 +46,28 @@ class MainFragment : Fragment(){
         serialRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         serialRecycler.adapter = SerialsRecyclerAdapter(horrorList)
 
+        val activity : MainActivity = context as MainActivity
+        navigation = activity.getNavigation()
+
         val horrorHeader: TextView = binding.headerHorrors
+        horrorHeader.setOnClickListener {
+            navigation.addFragment(GenreFragment.newInstance(), true)
+        }
+
+        val thrillerHeader: TextView = binding.headerThrillers
+        thrillerHeader.setOnClickListener {
+            navigation.addFragment(GenreFragment.newInstance(), true)
+        }
+
+        val comedyHeader: TextView = binding.headerComedies
+        comedyHeader.setOnClickListener {
+            navigation.addFragment(GenreFragment.newInstance(), true)
+        }
+
+        val serialHeader: TextView = binding.headerSerials
+        serialHeader.setOnClickListener {
+            navigation.addFragment(GenreFragment.newInstance(), true)
+        }
 
         return view
 
