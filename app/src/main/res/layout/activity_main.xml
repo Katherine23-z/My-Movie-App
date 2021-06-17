@@ -1,82 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/movieTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize= "@dimen/title_text_size"
-
-        />
-
-    <TextView
-        android:id="@+id/movieGenre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize= "@dimen/title_text_size"
-        />
-
-    <TextView
-        android:id="@+id/yearOfRelease"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize= "@dimen/title_text_size"
-        />
-
-    <TextView
-        android:id="@+id/movieDuration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize= "@dimen/title_text_size"
-        />
-
-        <TextView
-            android:id="@+id/movieTitle1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize= "@dimen/title_text_size"
-
-            />
-
-        <TextView
-            android:id="@+id/movieGenre1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize= "@dimen/title_text_size"
-            />
-
-        <TextView
-            android:id="@+id/yearOfRelease1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize= "@dimen/title_text_size"
-            />
-
-        <TextView
-            android:id="@+id/movieDuration1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize= "@dimen/title_text_size"
-            />
-
-    <Button
-        android:id="@+id/buttonFavourite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/title_text_size"
-        android:text="Add  to Favourite"
-        android:layout_gravity="center"/>
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+    tools:context=".MainActivity" />
