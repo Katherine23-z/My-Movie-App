@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="genre">жанр</string>
+    <string name="title">заголовок</string>
+    <string name="description">описание</string>
+    <string name="year_of_release">год выпуска</string>
+    <string name="duration">длительность</string>
+    <string name="horrors">ужасы</string>
+    <string name="thrillers">триллеры</string>
+    <string name="comedies">комедии</string>
+    <string name="serials">сериалы</string>
+</resources>

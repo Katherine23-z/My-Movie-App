@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main
+package com.example.movieapplication.ui.main.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapplication.Movie
+import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
-import com.example.movieapplication.databinding.ItemBinding
 
 class HorrorRecyclerAdapter( private val movies: List<Movie>) : RecyclerView.Adapter<HorrorRecyclerAdapter.HorrorsViewHolder>(){
 
@@ -39,10 +38,10 @@ class HorrorRecyclerAdapter( private val movies: List<Movie>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: HorrorsViewHolder, position: Int) {
-        holder.title?.text = "Заголовок"
-        holder.genre?.text = "Ужасы"
-        holder.year?.text = ""
-        holder.duration?.text = "час"
+        holder.title?.text = movies[position].movieTitle
+        holder.genre?.text = movies[position].movieGenre
+        holder.year?.text = movies[position].yearOfRelease.toString()
+        holder.duration?.text = movies[position].movieDuration.toString()
         holder.image?.setImageResource(R.drawable.cosmos)
 
     }

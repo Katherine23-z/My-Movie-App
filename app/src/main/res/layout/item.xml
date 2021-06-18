@@ -15,9 +15,8 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_weight="1"
+            android:layout_width="@dimen/recycler_item_image_high"
+            android:layout_height="@dimen/recycler_item_image_high"
             android:clickable="true"
             android:scaleType="fitXY" />
 
@@ -25,7 +24,7 @@
             android:id="@+id/caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="@string/title"
             android:textSize= "@dimen/text_size" />
 
 
@@ -33,21 +32,21 @@
             android:id="@+id/genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description"
+            android:text="@string/description"
             android:textSize="@dimen/text_size" />
 
         <TextView
             android:id="@+id/year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="year of  Release"
+            android:text="@string/year_of_release"
             android:textSize="@dimen/text_size" />
 
         <TextView
             android:id="@+id/timing"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="duration"
+            android:text="@string/duration"
             android:textSize="@dimen/text_size" />
 
     </LinearLayout>

@@ -1,13 +1,12 @@
-package com.example.movieapplication.ui.main
+package com.example.movieapplication.ui.main.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapplication.Movie
+import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 
 class ComedyRecyclerAdapter(private  val movies: List<Movie>) : RecyclerView.Adapter<ComedyRecyclerAdapter.ComedyViewHolder>() {
@@ -38,10 +37,10 @@ class ComedyRecyclerAdapter(private  val movies: List<Movie>) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: ComedyViewHolder, position: Int) {
-        holder.title?.text = "Заголовок"
-        holder.genre?.text = "Комедии"
-        holder.year?.text = ""
-        holder.duration?.text = "час"
+        holder.title?.text = movies[position].movieTitle
+        holder.genre?.text = movies[position].movieGenre
+        holder.year?.text = movies[position].yearOfRelease.toString()
+        holder.duration?.text = movies[position].movieDuration.toString()
         holder.image?.setImageResource(R.drawable.cosmos)
     }
 }
