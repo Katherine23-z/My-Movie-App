@@ -11,11 +11,12 @@ import com.example.movieapplication.R
 import com.example.movieapplication.model.getThrillerMovies
 import com.example.movieapplication.ui.main.MainFragment
 
-class ThrillerRecyclerAdapter(private  var onItemViewClickListener: MainFragment.OnItemViewClickListener?): RecyclerView.Adapter<ThrillerRecyclerAdapter.ThrillerViewHolder>() {
+class ThrillerRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) :
+    RecyclerView.Adapter<ThrillerRecyclerAdapter.ThrillerViewHolder>() {
 
     private val thrillerMovies: MutableList<Movie> = getThrillerMovies()
 
-    inner class ThrillerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class ThrillerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(movie: Movie) {
             itemView.findViewById<TextView>(R.id.caption).text = movie.movieTitle
             itemView.findViewById<TextView>(R.id.genre).text = movie.movieGenre
@@ -36,11 +37,11 @@ class ThrillerRecyclerAdapter(private  var onItemViewClickListener: MainFragment
     }
 
     override fun getItemCount(): Int {
-       return thrillerMovies.size
+        return thrillerMovies.size
     }
 
     override fun onBindViewHolder(holder: ThrillerViewHolder, position: Int) {
-       holder.bind(thrillerMovies[position])
+        holder.bind(thrillerMovies[position])
 
     }
 }
