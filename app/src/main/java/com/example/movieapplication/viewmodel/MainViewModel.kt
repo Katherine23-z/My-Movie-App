@@ -2,7 +2,6 @@ package com.example.movieapplication.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.movieapplication.viewmodel.AppState
 import com.example.movieapplication.model.Repository
 import com.example.movieapplication.model.RepositoryImpl
 import java.lang.Thread.sleep
@@ -12,16 +11,25 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<Any> = Mutabl
 
     fun getLiveData() = liveDataToObserve
 
-    fun getMovieData() {
-        getDataFromLocalSource()
-    }
+    fun getDataFromLocalSourceHorrors() = getDataFromLocalSource(movieGenre = "horror")
+    fun getDataFromLocalSourceThrillers() = getDataFromLocalSource(movieGenre = "thriller")
+    fun getDataFromLocalSourceComedies() = getDataFromLocalSource(movieGenre = "comedy")
+    fun getDataFromLocalSourceSerials() = getDataFromLocalSource(movieGenre = "serial")
 
-    private fun getDataFromLocalSource() {
+    private fun getDataFromLocalSource(movieGenre: String) {
         liveDataToObserve.value = AppState.Loading
 
         Thread {
             sleep(2000)
-            liveDataToObserve.postValue(AppState.Success(repositoryImpl.getMovieFromLocalStorage()))
+            liveDataToObserve.postValue(AppState.Success(
+                    when(movieGenre){
+                        "horror" -> repositoryImpl.getMovieFromLocalStorageHorrors()
+                        "thriller" -> repositoryImpl.getMovieFromLocalStorageThrillers()
+                        "comedy" -> repositoryImpl.getMovieFromLocalStorageComedies()
+                        "serial"-> repositoryImpl.getMovieFromLocalStorageSerials()
+                        else -> repositoryImpl.getMovieFromLocalStorageDefault()
+                    }
+            ))
         }.start()
 
     }

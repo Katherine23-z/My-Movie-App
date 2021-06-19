@@ -5,6 +5,10 @@ import com.example.movieapplication.model.Movie
 interface Repository {
 
     fun getMovieFromServer() : Movie
-    fun getMovieFromLocalStorage() : Movie
+    fun getMovieFromLocalStorageHorrors() : List<Movie>
+    fun getMovieFromLocalStorageThrillers() : List<Movie>
+    fun getMovieFromLocalStorageComedies() : List<Movie>
+    fun getMovieFromLocalStorageSerials() : List<Movie>
+    fun getMovieFromLocalStorageDefault() : List<Movie>
 
 }

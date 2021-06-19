@@ -31,7 +31,8 @@ class MainFragment : Fragment(){
     private lateinit var mainView : LinearLayout
     private var _binding : MainFragmentBinding? = null
     private val binding get() = _binding!!
-    private val movieList = listOf(Movie(), Movie(), Movie(), Movie(), Movie(), Movie(), Movie(), Movie())
+    private var movieGenre: String = "horror"
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -39,19 +40,44 @@ class MainFragment : Fragment(){
         val view = binding.root
         val horrorRecycler: RecyclerView = binding.recyclerHorrors
         horrorRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        horrorRecycler.adapter = HorrorRecyclerAdapter(movieList)
+        horrorRecycler.adapter = HorrorRecyclerAdapter(object : OnItemViewClickListener{
+            override fun onItemViewClick(movie: Movie) {
+                val bundle = Bundle()
+                bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
+                navigation.addFragment(MovieCardFragment.newInstance(bundle), true)
+            }
+
+        })
 
         val thrillerRecycler: RecyclerView = binding.recyclerThrillers
         thrillerRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        thrillerRecycler.adapter = ThrillerRecyclerAdapter(movieList)
+        thrillerRecycler.adapter = ThrillerRecyclerAdapter(object : OnItemViewClickListener{
+            override fun onItemViewClick(movie: Movie) {
+                val bundle = Bundle()
+                bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
+                navigation.addFragment(MovieCardFragment.newInstance(bundle), true)
+            }
+        })
 
         val comedyRecycler: RecyclerView = binding.recyclerComedies
         comedyRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        comedyRecycler.adapter = ComedyRecyclerAdapter(movieList)
+        comedyRecycler.adapter = ComedyRecyclerAdapter(object : OnItemViewClickListener{
+            override fun onItemViewClick(movie: Movie) {
+                val bundle = Bundle()
+                bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
+                navigation.addFragment(MovieCardFragment.newInstance(bundle), true)
+            }
+        })
 
         val serialRecycler: RecyclerView = binding.recyclerSerials
         serialRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        serialRecycler.adapter = SerialsRecyclerAdapter(movieList)
+        serialRecycler.adapter = SerialsRecyclerAdapter(object : OnItemViewClickListener{
+            override fun onItemViewClick(movie: Movie) {
+                val bundle = Bundle()
+                bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
+                navigation.addFragment(MovieCardFragment.newInstance(bundle), true)
+            }
+        })
 
         val activity : MainActivity = context as MainActivity
         navigation = activity.getNavigation()
@@ -84,7 +110,7 @@ class MainFragment : Fragment(){
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer{renderData(it as AppState)})
-        viewModel.getMovieData()
+        viewModel.getDataFromLocalSourceHorrors()
     }
 
     private fun renderData(appState: AppState) {
@@ -99,7 +125,7 @@ class MainFragment : Fragment(){
             is AppState.Error -> {
                 Snackbar
                         .make(mainView, "Error", Snackbar.LENGTH_INDEFINITE)
-                        .setAction("Reload") { viewModel.getMovieData() }
+                        .setAction("Reload") { viewModel.getDataFromLocalSourceHorrors() }
                         .show()
             }
         }
@@ -109,6 +135,10 @@ class MainFragment : Fragment(){
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    interface OnItemViewClickListener {
+        fun onItemViewClick(movie: Movie)
     }
 }
 
