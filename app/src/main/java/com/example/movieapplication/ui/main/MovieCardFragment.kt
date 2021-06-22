@@ -33,14 +33,14 @@ class MovieCardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val movie = arguments?.getParcelable<Movie>(BUNDLE_EXTRA)
-        if(movie != null){
-            binding.movieTitle.text = movie.movieTitle
-            binding.movieGenre.text = movie.movieGenre
-            binding.movieDuration.text = movie.movieDuration.toString()
-            binding.movieRelease.text = movie.yearOfRelease.toString()
+        arguments?.getParcelable<Movie>(BUNDLE_EXTRA).let { movie ->
+            binding.movieTitle.text = movie?.movieTitle
+            binding.movieGenre.text = movie?.movieGenre
+            binding.movieDuration.text = movie?.movieDuration.toString()
+            binding.movieRelease.text = movie?.yearOfRelease.toString()
             binding.poster.setImageResource(R.drawable.cosmos)
         }
+
     }
 
 

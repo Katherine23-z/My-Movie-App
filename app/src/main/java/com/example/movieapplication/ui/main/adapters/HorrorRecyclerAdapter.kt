@@ -19,18 +19,17 @@ class HorrorRecyclerAdapter(private var onItemViewClickListener: MainFragment.On
     inner class HorrorsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(movie: Movie) {
-            itemView.findViewById<TextView>(R.id.caption).text = movie.movieTitle
-            itemView.findViewById<TextView>(R.id.genre).text = movie.movieGenre
-            itemView.findViewById<TextView>(R.id.timing).text = movie.movieDuration.toString()
-            itemView.findViewById<TextView>(R.id.year).text = movie.yearOfRelease.toString()
-            val image = itemView.findViewById<ImageView>(R.id.imageView)
-            image.setImageResource(R.drawable.cosmos)
-            image.setOnClickListener {
-                onItemViewClickListener?.onItemViewClick(movie)
+            itemView.apply {
+                findViewById<TextView>(R.id.caption).text = movie.movieTitle
+                findViewById<TextView>(R.id.genre).text = movie.movieGenre
+                findViewById<TextView>(R.id.timing).text = movie.movieDuration.toString()
+                findViewById<TextView>(R.id.year).text = movie.yearOfRelease.toString()
+                findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.cosmos)
+                setOnClickListener {
+                    onItemViewClickListener?.onItemViewClick(movie)
+                }
             }
-
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HorrorsViewHolder {

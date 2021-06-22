@@ -12,8 +12,7 @@ fun getDefaultGenre() = "Жанр"
 
 fun getDefaultTitle() = "Название фильма"
 
-fun getHorrorMovies() : MutableList<Movie>{
-    return mutableListOf(
+fun getHorrorMovies() = mutableListOf(
             Movie("Молчание ягнят", "ужасы", 1991,114),
             Movie("Восставший из ада", "ужасы", 1987,93),
             Movie("Оно", "ужасы", 2017,135),
@@ -27,10 +26,9 @@ fun getHorrorMovies() : MutableList<Movie>{
             Movie("Оно идет", "ужасы", 2014,96),
             Movie("Кукла", "ужасы", 2016,98)
     )
-}
 
-fun getThrillerMovies() : MutableList<Movie>{
-    return mutableListOf(
+
+fun getThrillerMovies() = mutableListOf(
             Movie("Исчезнувшая", "триллеры", 2014,149),
             Movie("Начало", "триллеры", 2010,148),
             Movie("Семь", "триллеры", 1995,127),
@@ -44,10 +42,9 @@ fun getThrillerMovies() : MutableList<Movie>{
             Movie("Девятые врата", "триллеры", 1999,133),
             Movie("Посылка", "триллеры", 2009,115)
     )
-}
 
-fun getComedyMovies() : MutableList<Movie>{
-    return mutableListOf(
+
+fun getComedyMovies() = mutableListOf(
             Movie("Такси", "комедии", 1998,86),
             Movie("Отель Гранд Будапешт", "комедии", 2014,100),
             Movie("Реальные упыри", "комедии", 2014,86),
@@ -61,10 +58,9 @@ fun getComedyMovies() : MutableList<Movie>{
             Movie("Джентельмены удачи", "комедии", 1971,84),
             Movie("Борат", "комедии", 2006,84)
     )
-}
 
-fun getSerials() : MutableList<Movie> {
-    return mutableListOf(
+
+fun getSerials() =  mutableListOf(
             Movie("Особняк красной розы", "сериалы", 2002, 0),
             Movie("Американская история ужасов", "сериалы", 2011, 0),
             Movie("Потерянная комната", "сериалы", 2006, 0),
@@ -78,10 +74,9 @@ fun getSerials() : MutableList<Movie> {
             Movie("Теория большого взрыва", "сериалы", 2004, 0),
             Movie("Чернобыль", "сериалы", 2019, 0)
     )
-}
 
-    fun getDefault() : MutableList<Movie>{
-        return mutableListOf(
+
+    fun getDefault() = mutableListOf(
                 Movie("", "", 0,0),
                 Movie("", "", 0,0),
                 Movie("", "", 0,0),
@@ -95,4 +90,4 @@ fun getSerials() : MutableList<Movie> {
                 Movie("", "", 0,0),
                 Movie("", "", 0,0)
         )
-}
+

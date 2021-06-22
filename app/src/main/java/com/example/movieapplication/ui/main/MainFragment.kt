@@ -26,12 +26,14 @@ class MainFragment : Fragment(){
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+
+    private val viewModel: MainViewModel by lazy{
+        ViewModelProvider(this).get(MainViewModel::class.java)
+    }
     private lateinit var navigation: Navigation
     private lateinit var mainView : LinearLayout
     private var _binding : MainFragmentBinding? = null
     private val binding get() = _binding!!
-    private var movieGenre: String = "horror"
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -108,7 +110,6 @@ class MainFragment : Fragment(){
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer{renderData(it as AppState)})
         viewModel.getDataFromLocalSourceHorrors()
     }
@@ -116,17 +117,16 @@ class MainFragment : Fragment(){
     private fun renderData(appState: AppState) {
         when (appState) {
             is AppState.Success -> {
-                val movieData = appState.movieData
+                binding.mainFragmentLoadingLayout.visibility = View.GONE
                 Snackbar.make(mainView, "Success", Snackbar.LENGTH_LONG).show()
             }
             is AppState.Loading -> {
+                binding.mainFragmentLoadingLayout.visibility = View.VISIBLE
                 Snackbar.make(mainView, "Loading", Snackbar.LENGTH_LONG).show()
             }
             is AppState.Error -> {
-                Snackbar
-                        .make(mainView, "Error", Snackbar.LENGTH_INDEFINITE)
-                        .setAction("Reload") { viewModel.getDataFromLocalSourceHorrors() }
-                        .show()
+                binding.mainFragmentLoadingLayout.visibility = View.GONE
+                mainView.showSnackBar("error", "reload", {viewModel.getDataFromLocalSourceHorrors()})
             }
         }
 
@@ -135,6 +135,14 @@ class MainFragment : Fragment(){
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun View.showSnackBar(
+            text: String,
+            actionText: String,
+            action: (View) -> Unit,
+            lenght: Int = Snackbar.LENGTH_INDEFINITE){
+        Snackbar.make(this, text, lenght).setAction(actionText, action).show()
     }
 
     interface OnItemViewClickListener {
