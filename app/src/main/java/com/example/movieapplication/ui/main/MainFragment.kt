@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieapplication.R
 import com.example.movieapplication.viewmodel.AppState
 import com.example.movieapplication.databinding.MainFragmentBinding
 import com.example.movieapplication.model.Movie
@@ -118,15 +119,15 @@ class MainFragment : Fragment(){
         when (appState) {
             is AppState.Success -> {
                 binding.mainFragmentLoadingLayout.visibility = View.GONE
-                Snackbar.make(mainView, "Success", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(mainView, R.string.sucess, Snackbar.LENGTH_LONG).show()
             }
             is AppState.Loading -> {
                 binding.mainFragmentLoadingLayout.visibility = View.VISIBLE
-                Snackbar.make(mainView, "Loading", Snackbar.LENGTH_LONG).show()
+                Snackbar.make(mainView, getString(R.string.loading), Snackbar.LENGTH_LONG).show()
             }
             is AppState.Error -> {
                 binding.mainFragmentLoadingLayout.visibility = View.GONE
-                mainView.showSnackBar("error", "reload", {viewModel.getDataFromLocalSourceHorrors()})
+                mainView.showSnackBar(getString(R.string.error), getString(R.string.reload), {viewModel.getDataFromLocalSourceHorrors()})
             }
         }
 

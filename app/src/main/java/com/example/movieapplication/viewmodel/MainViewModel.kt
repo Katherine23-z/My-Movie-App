@@ -6,6 +6,7 @@ import com.example.movieapplication.model.Repository
 import com.example.movieapplication.model.RepositoryImpl
 import java.lang.Thread.sleep
 
+const val TIME = 2000
 class MainViewModel(private val liveDataToObserve: MutableLiveData<Any> = MutableLiveData(),
                     private val repositoryImpl: Repository = RepositoryImpl()) : ViewModel() {
 
@@ -20,7 +21,7 @@ class MainViewModel(private val liveDataToObserve: MutableLiveData<Any> = Mutabl
         liveDataToObserve.value = AppState.Loading
 
         Thread {
-            sleep(2000)
+            sleep(TIME.toLong())
             liveDataToObserve.postValue(AppState.Success(
                     when(movieGenre){
                         "horror" -> repositoryImpl.getMovieFromLocalStorageHorrors()
