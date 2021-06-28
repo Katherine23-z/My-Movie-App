@@ -14,14 +14,14 @@ class MovieCardFragment : Fragment() {
     companion object {
         const val BUNDLE_EXTRA = "movie"
 
-        fun newInstance(bundle: Bundle) : MovieCardFragment{
+        fun newInstance(bundle: Bundle): MovieCardFragment {
             val fragment = MovieCardFragment()
             fragment.arguments = bundle
             return fragment
         }
     }
 
-    private var _binding : MovieCardBinding? = null
+    private var _binding: MovieCardBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
