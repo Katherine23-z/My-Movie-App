@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main
+package com.example.movieapplication.framework.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.movieapplication.R
 import com.example.movieapplication.databinding.ActivityMainBinding
-import com.example.movieapplication.ui.main.MainFragment
-import com.example.movieapplication.ui.main.Navigation
+import com.example.movieapplication.framework.ui.main.MainFragment
+import com.example.movieapplication.framework.ui.main.Navigation
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.main_fragment.*
 

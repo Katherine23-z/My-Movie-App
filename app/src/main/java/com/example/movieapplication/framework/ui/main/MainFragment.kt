@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main
+package com.example.movieapplication.framework.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,22 +15,22 @@ import com.example.movieapplication.R
 import com.example.movieapplication.viewmodel.AppState
 import com.example.movieapplication.databinding.MainFragmentBinding
 import com.example.movieapplication.model.Movie
-import com.example.movieapplication.ui.main.adapters.ComedyRecyclerAdapter
-import com.example.movieapplication.ui.main.adapters.HorrorRecyclerAdapter
-import com.example.movieapplication.ui.main.adapters.SerialsRecyclerAdapter
-import com.example.movieapplication.ui.main.adapters.ThrillerRecyclerAdapter
+import com.example.movieapplication.framework.ui.main.adapters.ComedyRecyclerAdapter
+import com.example.movieapplication.framework.ui.main.adapters.HorrorRecyclerAdapter
+import com.example.movieapplication.framework.ui.main.adapters.FantasticRecyclerAdapter
+import com.example.movieapplication.framework.ui.main.adapters.ThrillerRecyclerAdapter
 import com.example.movieapplication.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
 
-class MainFragment : Fragment(){
+class MainFragment : Fragment(), CoroutineScope by MainScope(){
     companion object {
         fun newInstance() = MainFragment()
     }
 
 
-    private val viewModel: MainViewModel by lazy{
-        ViewModelProvider(this).get(MainViewModel::class.java)
-    }
+    private val viewModel: MainViewModel by lazy { ViewModelProvider(this).get(MainViewModel::class.java) }
     private lateinit var navigation: Navigation
     private lateinit var mainView : LinearLayout
     private var _binding : MainFragmentBinding? = null
@@ -72,9 +72,9 @@ class MainFragment : Fragment(){
             }
         })
 
-        val serialRecycler: RecyclerView = binding.recyclerSerials
-        serialRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        serialRecycler.adapter = SerialsRecyclerAdapter(object : OnItemViewClickListener{
+        val fantasticRecycler: RecyclerView = binding.recyclerFantastic
+        fantasticRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        fantasticRecycler.adapter = FantasticRecyclerAdapter(object : OnItemViewClickListener{
             override fun onItemViewClick(movie: Movie) {
                 val bundle = Bundle()
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
@@ -100,7 +100,7 @@ class MainFragment : Fragment(){
             navigation.addFragment(GenreFragment.newInstance(), true)
         }
 
-        val serialHeader: TextView = binding.headerSerials
+        val serialHeader: TextView = binding.headerFantastic
         serialHeader.setOnClickListener {
             navigation.addFragment(GenreFragment.newInstance(), true)
         }
@@ -114,6 +114,7 @@ class MainFragment : Fragment(){
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer{renderData(it as AppState)})
         viewModel.getDataFromLocalSourceHorrors()
     }
+
 
     private fun renderData(appState: AppState) {
         when (appState) {

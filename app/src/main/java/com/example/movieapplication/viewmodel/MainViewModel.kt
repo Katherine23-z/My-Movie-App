@@ -1,14 +1,16 @@
 package com.example.movieapplication.viewmodel
 
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movieapplication.model.Repository
 import com.example.movieapplication.model.RepositoryImpl
+import kotlinx.coroutines.*
 import java.lang.Thread.sleep
 
 const val TIME = 2000
-class MainViewModel(private val liveDataToObserve: MutableLiveData<Any> = MutableLiveData(),
-                    private val repositoryImpl: Repository = RepositoryImpl()) : ViewModel() {
+class MainViewModel(private val repositoryImpl: Repository = RepositoryImpl()): ViewModel(), LifecycleObserver, CoroutineScope by MainScope(){
+    private val liveDataToObserve: MutableLiveData<AppState> = MutableLiveData()
 
     fun getLiveData() = liveDataToObserve
 

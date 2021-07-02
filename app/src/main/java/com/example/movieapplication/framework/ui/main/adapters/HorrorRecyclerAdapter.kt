@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main.adapters
+package com.example.movieapplication.framework.ui.main.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getHorrorMovies
-import com.example.movieapplication.ui.main.MainFragment
+import com.example.movieapplication.framework.ui.main.MainFragment
 
 
 class HorrorRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) :

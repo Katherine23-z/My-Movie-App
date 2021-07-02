@@ -6,5 +6,5 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity"
+    tools:context=".framework.ui.main.MainActivity"
     tools:showIn="@layout/activity_main"/>

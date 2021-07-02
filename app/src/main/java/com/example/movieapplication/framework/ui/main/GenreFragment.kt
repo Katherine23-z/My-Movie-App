@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main
+package com.example.movieapplication.framework.ui.main
 
 import android.os.Bundle
 import android.view.LayoutInflater

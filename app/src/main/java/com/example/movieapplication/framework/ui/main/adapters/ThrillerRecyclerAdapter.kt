@@ -1,4 +1,4 @@
-package com.example.movieapplication.ui.main.adapters
+package com.example.movieapplication.framework.ui.main.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +8,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
-import com.example.movieapplication.model.getSerials
-import com.example.movieapplication.ui.main.MainFragment
+import com.example.movieapplication.model.getThrillerMovies
+import com.example.movieapplication.framework.ui.main.MainFragment
 
-class SerialsRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) : RecyclerView.Adapter<SerialsRecyclerAdapter.SerialsViewHolder>() {
+class ThrillerRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) :
+    RecyclerView.Adapter<ThrillerRecyclerAdapter.ThrillerViewHolder>() {
 
-    private val serials: MutableList<Movie> = getSerials()
+    private val thrillerMovies: MutableList<Movie> = getThrillerMovies()
 
-    inner class SerialsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ThrillerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(movie: Movie) {
             itemView.apply {
                 findViewById<TextView>(R.id.caption).text = movie.movieTitle
@@ -27,20 +28,20 @@ class SerialsRecyclerAdapter(private var onItemViewClickListener: MainFragment.O
                     onItemViewClickListener?.onItemViewClick(movie)
                 }
             }
-
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SerialsViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThrillerViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
-        return SerialsViewHolder(itemView)
+        return ThrillerViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        return serials.size
+        return thrillerMovies.size
     }
 
-    override fun onBindViewHolder(holder: SerialsViewHolder, position: Int) {
-        holder.bind(serials[position])
+    override fun onBindViewHolder(holder: ThrillerViewHolder, position: Int) {
+        holder.bind(thrillerMovies[position])
+
     }
 }

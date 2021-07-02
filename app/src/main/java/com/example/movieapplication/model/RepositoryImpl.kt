@@ -1,7 +1,17 @@
 package com.example.movieapplication.model
 
+import android.os.Build
+import androidx.annotation.RequiresApi
+
 class RepositoryImpl : Repository {
-    override fun getMovieFromServer() = Movie()
+    @RequiresApi(Build.VERSION_CODES.N)
+    override fun getMovieFromServer(id: Long): Movie {
+        val dto = MovieLoader.loadMovie(id)
+        return Movie (
+                overview = dto?.overview
+        )
+    }
+
 
     override fun getMovieFromLocalStorageHorrors() = getHorrorMovies()
 

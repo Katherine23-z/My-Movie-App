@@ -4,7 +4,7 @@ import com.example.movieapplication.model.Movie
 
 interface Repository {
 
-    fun getMovieFromServer() : Movie
+    fun getMovieFromServer(id: Long) : Movie
     fun getMovieFromLocalStorageHorrors() : List<Movie>
     fun getMovieFromLocalStorageThrillers() : List<Movie>
     fun getMovieFromLocalStorageComedies() : List<Movie>
