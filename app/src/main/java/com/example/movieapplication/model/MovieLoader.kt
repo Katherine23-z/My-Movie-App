@@ -47,12 +47,11 @@ object MovieLoader{
     }
 
 
-
-    private fun getLinesForOld(reader: BufferedReader): String{
+    private fun getLinesForOld(reader: BufferedReader): String {
         val rawData = StringBuilder(1024)
         var tempVariable: String?
 
-        while(reader.readLine().also{tempVariable = it}!=null){
+        while (reader.readLine().also { tempVariable = it } != null) {
             rawData.append(tempVariable).append("\n")
         }
         reader.close()
@@ -65,8 +64,4 @@ object MovieLoader{
         return reader.lines().collect(Collectors.joining("\n"))
     }
 
-    interface MovieLoaderListener{
-        fun onLoaded(movieDTO: MovieDTO)
-        fun onFailed(throwable: Throwable)
-    }
 }

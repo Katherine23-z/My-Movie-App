@@ -1,5 +1,7 @@
 package com.example.movieapplication.framework.ui.main
 
+import android.content.Intent
+import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +15,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.movieapplication.R
 import com.example.movieapplication.databinding.ActivityMainBinding
+import com.example.movieapplication.framework.ui.MainBroadCastReceiver
 import com.example.movieapplication.framework.ui.main.MainFragment
 import com.example.movieapplication.framework.ui.main.Navigation
 import com.google.android.material.snackbar.Snackbar
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var navigation: Navigation
     private lateinit var toolbar: Toolbar
+    private val receiver = MainBroadCastReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +36,15 @@ class MainActivity : AppCompatActivity() {
         navigation = Navigation(supportFragmentManager)
         navigation.addFragment(MainFragment.newInstance(), false)
 
+        //CONNECTIVITY_ACTION deprecated
+        registerReceiver(receiver, IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED))
+
         initToolbar()
+    }
+
+    override fun onDestroy() {
+        unregisterReceiver(receiver)
+        super.onDestroy()
     }
 
     fun getNavigation(): Navigation {
