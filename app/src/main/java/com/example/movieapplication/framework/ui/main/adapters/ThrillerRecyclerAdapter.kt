@@ -10,6 +10,8 @@ import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getThrillerMovies
 import com.example.movieapplication.framework.ui.main.MainFragment
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item.view.*
 
 class ThrillerRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) :
     RecyclerView.Adapter<ThrillerRecyclerAdapter.ThrillerViewHolder>() {
@@ -23,7 +25,7 @@ class ThrillerRecyclerAdapter(private var onItemViewClickListener: MainFragment.
                 findViewById<TextView>(R.id.genre).text = movie.movieGenre
                 findViewById<TextView>(R.id.timing).text = movie.movieDuration.toString()
                 findViewById<TextView>(R.id.year).text = movie.yearOfRelease.toString()
-                findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.cosmos)
+                Picasso.get().load(movie.poster).into(imageView)
                 setOnClickListener {
                     onItemViewClickListener?.onItemViewClick(movie)
                 }
