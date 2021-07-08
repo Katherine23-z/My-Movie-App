@@ -19,4 +19,5 @@
     <string name="delete">Delete</string>
     <string name="reload">reload</string>
     <string name="add_to_favourite">add to favourite</string>
+    <string name="service_button">Service Button</string>
 </resources>

@@ -3,11 +3,10 @@ package com.example.movieapplication.framework.ui
 import android.app.IntentService
 import android.content.Intent
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.movieapplication.framework.ui.main.*
-import com.example.movieapplication.model.MovieDTO
+import com.example.movieapplication.model.rest.MovieDTO
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.InputStreamReader

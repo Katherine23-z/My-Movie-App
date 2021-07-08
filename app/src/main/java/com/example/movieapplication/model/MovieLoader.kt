@@ -1,9 +1,9 @@
 package com.example.movieapplication.model
 
 import android.os.Build
-import android.os.Handler
 import android.util.Log
 import androidx.annotation.RequiresApi
+import com.example.movieapplication.model.rest.MovieDTO
 import com.google.gson.Gson
 import java.io.BufferedReader
 import java.io.InputStreamReader

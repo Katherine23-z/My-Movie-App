@@ -10,6 +10,8 @@ import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getHorrorMovies
 import com.example.movieapplication.framework.ui.main.MainFragment
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.item.view.*
 
 
 class HorrorRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) :
@@ -24,7 +26,7 @@ class HorrorRecyclerAdapter(private var onItemViewClickListener: MainFragment.On
                 findViewById<TextView>(R.id.genre).text = movie.movieGenre
                 findViewById<TextView>(R.id.timing).text = movie.movieDuration.toString()
                 findViewById<TextView>(R.id.year).text = movie.yearOfRelease.toString()
-                findViewById<ImageView>(R.id.imageView).setImageResource(R.drawable.cosmos)
+                Picasso.get().load(movie.poster).into(imageView)
                 setOnClickListener {
                     onItemViewClickListener?.onItemViewClick(movie)
                 }

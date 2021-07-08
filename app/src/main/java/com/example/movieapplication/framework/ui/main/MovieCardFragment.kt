@@ -4,27 +4,21 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.example.movieapplication.R
 import com.example.movieapplication.databinding.MovieCardBinding
 import com.example.movieapplication.framework.ui.DetailsService
 import com.example.movieapplication.framework.ui.ID_EXTRA
 import com.example.movieapplication.model.Movie
-import com.example.movieapplication.model.MovieDTO
-import com.example.movieapplication.model.MovieLoader
-import com.example.movieapplication.viewmodel.AppState
-import com.example.movieapplication.viewmodel.MainViewModel
+import com.example.movieapplication.model.rest.MovieDTO
 import com.example.movieapplication.viewmodel.MovieCardViewModel
-import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.movie_card.*
 
 const val DETAILS_INTENT_FILTER = "DETAILS INTENT FILTER"
 const val DETAILS_LOAD_RESULT_EXTRA = "LOAD RESULT"
@@ -114,6 +108,7 @@ class MovieCardFragment : Fragment() {
             binding.movieRelease.text = movieBundle.yearOfRelease.toString()
             binding.movieDescription.text = movieDTO.overview
 
+            Picasso.get().load(movieBundle.poster).into(poster)
         }
     }
 

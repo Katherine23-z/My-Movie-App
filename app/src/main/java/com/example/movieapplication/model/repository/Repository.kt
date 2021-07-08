@@ -1,4 +1,4 @@
-package com.example.movieapplication.model
+package com.example.movieapplication.model.repository
 
 import com.example.movieapplication.model.Movie
 
