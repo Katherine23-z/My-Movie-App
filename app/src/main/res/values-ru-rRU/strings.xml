@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="genre">жанр</string>
+    <string name="title">заголовок</string>
+    <string name="description">описание</string>
+    <string name="year_of_release">год выпуска</string>
+    <string name="duration">длительность</string>
+    <string name="horrors">Ужасы</string>
+    <string name="thrillers">Триллеры</string>
+    <string name="comedies">Комедии</string>
+    <string name="fantastic">Фантастика</string>
+    <string name="movie_poster">Плакат фильма</string>
+    <string name="add_recycler">Добавить песайклервью</string>
+    <string name="error">Ошибка</string>
+    <string name="loading">Загрузка</string>
+    <string name="sucess">Успех</string>
+    <string name="search">Поиск</string>
+    <string name="add">Добавить</string>
+    <string name="delete">Удалить</string>
+    <string name="reload">Перезагрузить</string>
+    <string name="add_to_favourite">Добавить в избранное</string>
+</resources>
