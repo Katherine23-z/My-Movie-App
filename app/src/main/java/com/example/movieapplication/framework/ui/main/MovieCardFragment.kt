@@ -5,18 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.example.movieapplication.R
 import com.example.movieapplication.databinding.MovieCardBinding
 import com.example.movieapplication.framework.ui.DetailsService
 import com.example.movieapplication.framework.ui.ID_EXTRA
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.model.rest.MovieDTO
 import com.example.movieapplication.viewmodel.MovieCardViewModel
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.movie_card.*
 
@@ -70,6 +71,7 @@ class MovieCardFragment : Fragment() {
         context?.let {
             LocalBroadcastManager.getInstance(it).registerReceiver(loadResultReceiver, IntentFilter((DETAILS_INTENT_FILTER)))
         }
+        setHasOptionsMenu(true)
     }
 
     override fun onDestroy() {
@@ -94,6 +96,18 @@ class MovieCardFragment : Fragment() {
             })
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.movie_card_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.action_add -> Toast.makeText(context, "Add", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun renderData(movieDTO: MovieDTO) {

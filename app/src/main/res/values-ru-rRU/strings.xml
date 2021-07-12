@@ -20,4 +20,10 @@
     <string name="delete">Удалить</string>
     <string name="reload">Перезагрузить</string>
     <string name="add_to_favourite">Добавить в избранное</string>
+    <string name="service_button">Сервис</string>
+    <string name="settings">Настройки</string>
+    <string name="on">вкл</string>
+    <string name="off">выкл</string>
+    <string name="adult">Для взрослых</string>
+    <string name="is_adult">взрослые</string>
 </resources>
