@@ -17,7 +17,6 @@ import com.example.movieapplication.framework.ui.ID_EXTRA
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.model.rest.MovieDTO
 import com.example.movieapplication.viewmodel.MovieCardViewModel
-import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.movie_card.*
 
@@ -92,7 +91,7 @@ class MovieCardFragment : Fragment() {
         movieBundle = arguments?.getParcelable(BUNDLE_EXTRA) ?: Movie()
         context?.let {
             it.startService(Intent(it, DetailsService::class.java).apply {
-                putExtra(ID_EXTRA, movieBundle.id)
+                putExtra(ID_EXTRA, movieBundle.movieId)
             })
         }
 
@@ -105,9 +104,13 @@ class MovieCardFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.action_add -> Toast.makeText(context, "Add", Toast.LENGTH_SHORT).show()
+            R.id.action_add ->saveMovie()
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun saveMovie(){
+        viewModel.saveMovieToDB(Movie(movieBundle.movieId, movieBundle.movieTitle, movieBundle.movieGenre, movieBundle.yearOfRelease))
     }
 
     private fun renderData(movieDTO: MovieDTO) {

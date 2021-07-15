@@ -26,6 +26,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import android.view.Menu
 import android.view.MenuItem
+import com.example.movieapplication.framework.ui.history_fragment.HistoryFragment
 
 class MainFragment : Fragment(), CoroutineScope by MainScope(){
     companion object {
@@ -154,7 +155,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.main_menu, menu)
-        val search: MenuItem? = menu?.findItem(R.id.action_search)
+        val search: MenuItem? = menu.findItem(R.id.action_search)
         val searchText = search?.actionView as androidx.appcompat.widget.SearchView
         searchText.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -171,6 +172,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_settings -> navigation.addFragment(SettingsFragment.newInstance(), true)
+            R.id.action_add_to_fav -> navigation.addFragment(HistoryFragment.newInstance(), true)
         }
         return super.onOptionsItemSelected(item)
     }

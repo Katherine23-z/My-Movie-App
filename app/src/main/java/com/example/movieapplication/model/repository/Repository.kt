@@ -11,4 +11,5 @@ interface Repository {
     fun getMovieFromLocalStorageSerials() : List<Movie>
     fun getMovieFromLocalStorageDefault() : List<Movie>
 
+
 }

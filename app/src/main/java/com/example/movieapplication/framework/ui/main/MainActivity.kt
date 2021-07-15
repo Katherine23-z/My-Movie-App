@@ -51,30 +51,6 @@ class MainActivity : AppCompatActivity() {
         return toolbar
     }
 
-    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        val search: MenuItem? = menu?.findItem(R.id.action_search)
-        val searchText = search?.actionView as androidx.appcompat.widget.SearchView
-        searchText.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                Toast.makeText(this@MainActivity, query, Toast.LENGTH_SHORT).show()
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-        })
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.action_add -> Snackbar.make(mainView, getString(R.string.add_to_favourite), Snackbar.LENGTH_LONG).show()
-            R.id.action_settings -> navigation.addFragment(SettingsFragment.newInstance(), true)
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
 }
 
 
