@@ -6,6 +6,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.movieapplication.framework.ui.main.*
+import com.example.movieapplication.framework.ui.main.fragments.*
 import com.example.movieapplication.model.rest.MovieDTO
 import com.google.gson.Gson
 import java.io.BufferedReader

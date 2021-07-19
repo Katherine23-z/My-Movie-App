@@ -1,4 +1,4 @@
-package com.example.movieapplication.framework.ui.main
+package com.example.movieapplication.framework.ui.main.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -21,12 +21,12 @@ import com.example.movieapplication.framework.ui.main.adapters.FantasticRecycler
 import com.example.movieapplication.framework.ui.main.adapters.ThrillerRecyclerAdapter
 import com.example.movieapplication.viewmodel.MainViewModel
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.main_fragment.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.MainScope
 import android.view.Menu
 import android.view.MenuItem
 import com.example.movieapplication.framework.ui.history_fragment.HistoryFragment
+import com.example.movieapplication.framework.ui.main.*
 
 class MainFragment : Fragment(), CoroutineScope by MainScope(){
     companion object {
@@ -56,7 +56,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
             initRecyclers()
             initHeaders()
         }else {
-            Toast.makeText(context, "ADULT", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.Adult), Toast.LENGTH_SHORT).show()
         }
         mainView = binding.mainView
         return view
@@ -87,7 +87,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
     fun initRecyclers() {
         val horrorRecycler: RecyclerView = binding.recyclerHorrors
         horrorRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        horrorRecycler.adapter = HorrorRecyclerAdapter(object : OnItemViewClickListener{
+        horrorRecycler.adapter = HorrorRecyclerAdapter(object : OnItemViewClickListener {
             override fun onItemViewClick(movie: Movie) {
                 val bundle = Bundle()
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
@@ -98,7 +98,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
 
         val thrillerRecycler: RecyclerView = binding.recyclerThrillers
         thrillerRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        thrillerRecycler.adapter = ThrillerRecyclerAdapter(object : OnItemViewClickListener{
+        thrillerRecycler.adapter = ThrillerRecyclerAdapter(object : OnItemViewClickListener {
             override fun onItemViewClick(movie: Movie) {
                 val bundle = Bundle()
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
@@ -108,7 +108,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
 
         val comedyRecycler: RecyclerView = binding.recyclerComedies
         comedyRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        comedyRecycler.adapter = ComedyRecyclerAdapter(object : OnItemViewClickListener{
+        comedyRecycler.adapter = ComedyRecyclerAdapter(object : OnItemViewClickListener {
             override fun onItemViewClick(movie: Movie) {
                 val bundle = Bundle()
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
@@ -118,7 +118,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
 
         val fantasticRecycler: RecyclerView = binding.recyclerFantastic
         fantasticRecycler.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        fantasticRecycler.adapter = FantasticRecyclerAdapter(object : OnItemViewClickListener{
+        fantasticRecycler.adapter = FantasticRecyclerAdapter(object : OnItemViewClickListener {
             override fun onItemViewClick(movie: Movie) {
                 val bundle = Bundle()
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
@@ -173,6 +173,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope(){
         when(item.itemId){
             R.id.action_settings -> navigation.addFragment(SettingsFragment.newInstance(), true)
             R.id.action_add_to_fav -> navigation.addFragment(HistoryFragment.newInstance(), true)
+            R.id.action_content_provider -> navigation.addFragment(ContentProviderFragment.newInstance(), true)
         }
         return super.onOptionsItemSelected(item)
     }

@@ -3,13 +3,12 @@ package com.example.movieapplication.framework.ui.main.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getHorrorMovies
-import com.example.movieapplication.framework.ui.main.MainFragment
+import com.example.movieapplication.framework.ui.main.fragments.MainFragment
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item.view.*
 

@@ -1,4 +1,4 @@
-package com.example.movieapplication.framework.ui.main
+package com.example.movieapplication.framework.ui.main.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -30,7 +30,7 @@ class SettingsFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val sharedPrefs = activity?.getSharedPreferences(MY_SETTINGS, Context.MODE_PRIVATE)
         val text = binding.textSettings

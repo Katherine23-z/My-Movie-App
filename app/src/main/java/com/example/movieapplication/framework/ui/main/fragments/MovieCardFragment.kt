@@ -1,4 +1,4 @@
-package com.example.movieapplication.framework.ui.main
+package com.example.movieapplication.framework.ui.main.fragments
 
 import android.content.BroadcastReceiver
 import android.content.Context

@@ -8,7 +8,7 @@ import com.example.movieapplication.framework.App
     entities = [
         HistoryEntity::class
     ],
-    version =1,
+    version = 1,
     exportSchema = false
 )
 abstract class HistoryDataBase : RoomDatabase(){

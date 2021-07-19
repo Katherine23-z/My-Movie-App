@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getSerials
-import com.example.movieapplication.framework.ui.main.MainFragment
+import com.example.movieapplication.framework.ui.main.fragments.MainFragment
 
 class FantasticRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) : RecyclerView.Adapter<FantasticRecyclerAdapter.SerialsViewHolder>() {
 

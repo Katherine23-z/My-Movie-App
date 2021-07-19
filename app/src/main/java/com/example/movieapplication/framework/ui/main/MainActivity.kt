@@ -4,16 +4,10 @@ import android.content.Intent
 import android.content.IntentFilter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import com.example.movieapplication.R
 import com.example.movieapplication.databinding.ActivityMainBinding
-import com.example.movieapplication.databinding.FragmentGenreBinding
 import com.example.movieapplication.framework.ui.MainBroadCastReceiver
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.main_fragment.*
+import com.example.movieapplication.framework.ui.main.fragments.MainFragment
 
 
 class MainActivity : AppCompatActivity() {

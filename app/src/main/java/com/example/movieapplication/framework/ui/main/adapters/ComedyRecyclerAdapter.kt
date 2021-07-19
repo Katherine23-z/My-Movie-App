@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.R
 import com.example.movieapplication.model.getComedyMovies
-import com.example.movieapplication.framework.ui.main.MainFragment
+import com.example.movieapplication.framework.ui.main.fragments.MainFragment
 
 class ComedyRecyclerAdapter(private var onItemViewClickListener: MainFragment.OnItemViewClickListener?) : RecyclerView.Adapter<ComedyRecyclerAdapter.ComedyViewHolder>() {
 

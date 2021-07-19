@@ -25,4 +25,6 @@
     <string name="is_adult">Is Adult</string>
     <string name="on">ON</string>
     <string name="off">OFF</string>
+    <string name="content_provider">Content provider</string>
+    <string name="Adult">ADULT</string>
 </resources>
