@@ -27,4 +27,6 @@
     <string name="off">OFF</string>
     <string name="content_provider">Content provider</string>
     <string name="Adult">ADULT</string>
+    <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
+    <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
 </resources>

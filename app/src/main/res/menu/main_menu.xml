@@ -35,5 +35,13 @@
         app:showAsAction="ifRoom"
         />
 
+    <item
+        android:title="Geo Location"
+        android:id="@+id/geoLocation"
+        android:icon="@drawable/ic_baseline_edit_location_24"
+        android:orderInCategory="20"
+        app:showAsAction="ifRoom"
+        />
+
 
 </menu>
