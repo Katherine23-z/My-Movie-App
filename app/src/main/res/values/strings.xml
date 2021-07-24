@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Movie Application</string>
+    <string name="map_api_key" translatable = "false">AIzaSyBbwdgXxwBWiSyjHKCsH3JeiF3WiZpvSsM</string>
     <string name="genre">genre</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
@@ -29,4 +30,15 @@
     <string name="Adult">ADULT</string>
     <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
     <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Google Maps</string>
+    <string name="add_address">Add address</string>
+    <string name="address">Address</string>
+    <string name="map_mode">map_mode</string>
+    <string name="normal">normal</string>
+    <string name="satellite">satellite</string>
+    <string name="terrain">terrain</string>
+    <string name="traffic">traffic</string>
+    <string name="start">Start Position</string>
+    <string name="new_position">New Position</string>
+    <string name="search_movie_location">Search Movie Location</string>
 </resources>

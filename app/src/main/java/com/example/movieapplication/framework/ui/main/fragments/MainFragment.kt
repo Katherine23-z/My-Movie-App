@@ -123,7 +123,6 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
                 bundle.putParcelable(MovieCardFragment.BUNDLE_EXTRA, movie)
                 navigation.addFragment(MovieCardFragment.newInstance(bundle), true)
             }
-
         })
 
         val thrillerRecycler: RecyclerView = binding.recyclerThrillers
@@ -204,6 +203,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
             R.id.action_settings -> navigation.addFragment(SettingsFragment.newInstance(), true)
             R.id.action_add_to_fav -> navigation.addFragment(HistoryFragment.newInstance(), true)
             R.id.action_content_provider -> navigation.addFragment(ContentProviderFragment.newInstance(), true)
+            R.id.google_maps -> navigation.addFragment(GoogleMapFragment(), true)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -260,26 +260,6 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
             }.setNegativeButton("Закрыть") {dialog, _ -> dialog.dismiss() }.create().show()
         }
     }
-
-
-
-
-    /*private fun showRationaleDialog() {
-        activity?.let {
-            AlertDialog.Builder(it)
-                    .setTitle("")
-                    .setMessage("")
-                    .setPositiveButton("") { _, _ ->
-                        requestPermission()
-                    }
-                    .setNegativeButton("") { dialog, _ -> dialog.dismiss() }
-                    .create()
-                    .show()
-        }
-    }*/
-
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

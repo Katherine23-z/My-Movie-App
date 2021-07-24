@@ -19,9 +19,9 @@ fun getDefaultGenre() = "Жанр"
 fun getDefaultTitle() = "Название фильма"
 
 fun getHorrorMovies() = mutableListOf(
-            Movie(274,"Молчание ягнят", "ужасы", 1991,114, "", "https://fs.kinomania.ru/file/film_poster/1/ce/1ce927f875864094e3906a4a0b5ece68.jpeg"),
-            Movie(9003,"Восставший из ада", "ужасы", 1987,93, "", "https://fs.kinomania.ru/file/film_poster/5/00/500bcbcf4f48df874b9dbe4059700824.jpeg"),
-            Movie(19614,"Оно", "ужасы", 1990,135, "", "https://fs.kinomania.ru/file/film_poster/6/fc/6fca0a1bb7df30924337f674e82eb6a2.jpeg"),
+            Movie(274,"Молчание ягнят", "Red Square 1", 1991,114, "", "https://fs.kinomania.ru/file/film_poster/1/ce/1ce927f875864094e3906a4a0b5ece68.jpeg"),
+            Movie(9003,"Восставший из ада", "Samara Stara Zagora 183", 1987,93, "", "https://fs.kinomania.ru/file/film_poster/5/00/500bcbcf4f48df874b9dbe4059700824.jpeg"),
+            Movie(19614,"Оно", "Canada Rue Dupuis Levis 14", 1990,135, "", "https://fs.kinomania.ru/file/film_poster/6/fc/6fca0a1bb7df30924337f674e82eb6a2.jpeg"),
             Movie(138843,"Заклятие", "ужасы", 2013,112, "", "https://fs.kinomania.ru/file/film_poster/3/79/3793d4a04ccb4c3272853bc526c2c8a6.jpeg"),
             Movie(49018,"Астрал", "ужасы", 2010,103, "", "https://fs.kinomania.ru/file/film_poster/3/eb/3eb81a0ff05d44147f7b43d1577423d0.jpeg"),
             Movie(447332,"Тихое место", "ужасы", 2018,90,"", "https://fs.kinomania.ru/file/film_poster/3/80/380bd14a4f13c7bb03578a261f30e36c.jpeg"),

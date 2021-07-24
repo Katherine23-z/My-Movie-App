@@ -10,4 +10,12 @@
         app:showAsAction="ifRoom"
         />
 
+    <item
+        android:title="geo"
+        android:id="@+id/action_geo"
+        android:icon="@drawable/ic_baseline_push_pin_24"
+        android:orderInCategory="10"
+        app:showAsAction="ifRoom"
+        />
+
 </menu>

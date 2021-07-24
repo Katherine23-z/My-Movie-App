@@ -6,7 +6,6 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
@@ -14,6 +13,8 @@ import com.example.movieapplication.R
 import com.example.movieapplication.databinding.MovieCardBinding
 import com.example.movieapplication.framework.ui.DetailsService
 import com.example.movieapplication.framework.ui.ID_EXTRA
+import com.example.movieapplication.framework.ui.main.MainActivity
+import com.example.movieapplication.framework.ui.main.Navigation
 import com.example.movieapplication.model.Movie
 import com.example.movieapplication.model.rest.MovieDTO
 import com.example.movieapplication.viewmodel.MovieCardViewModel
@@ -49,6 +50,7 @@ class MovieCardFragment : Fragment() {
     private var _binding: MovieCardBinding? = null
     private val binding get() = _binding!!
     private lateinit var movieBundle: Movie
+    private lateinit var navigation: Navigation
     private val loadResultReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             when (intent?.getStringExtra(DETAILS_LOAD_RESULT_EXTRA)) {
@@ -83,6 +85,8 @@ class MovieCardFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         _binding = MovieCardBinding.inflate(inflater, container, false)
+        val activity: MainActivity = context as MainActivity
+        navigation = activity.getNavigation()
         return binding.root
     }
 
@@ -105,6 +109,12 @@ class MovieCardFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.action_add ->saveMovie()
+            R.id.action_geo -> {
+                val bundle = Bundle()
+                val location = movieBundle.movieGenre
+                bundle.putString(GoogleMapFragment.BUNDLE_EXTRA_GEO, location)
+                navigation.addFragment(GoogleMapFragment.newInstance(bundle), true)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

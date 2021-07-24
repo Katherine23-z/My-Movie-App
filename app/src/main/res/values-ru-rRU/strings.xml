@@ -30,4 +30,15 @@
     <string name="Adult">Для взрослых</string>
     <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
     <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Гугл Карты</string>
+    <string name="add_address">Введите адрес</string>
+    <string name="address">Адрес</string>
+    <string name="map_mode">режим карты</string>
+    <string name="normal">нормальный</string>
+    <string name="satellite">спутник</string>
+    <string name="terrain">схема</string>
+    <string name="traffic">пробки</string>
+    <string name="start">Стартовая позиция</string>
+    <string name="new_position">Новая позиция</string>
+    <string name="search_movie_location">Указать локацию фильма</string>
 </resources>
