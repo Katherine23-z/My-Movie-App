@@ -42,6 +42,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.IOException
 
+private const val minTime = 5000L
+private const val minDistance = 10f
 class MainFragment : Fragment(), CoroutineScope by MainScope() {
     companion object {
         fun newInstance() = MainFragment()
@@ -229,14 +231,14 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             val provider = locationManager.getProvider(LocationManager.GPS_PROVIDER)
             provider.let {
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000L, 10f, onLocationListener)
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, minTime, minDistance, onLocationListener)
             }
         } else {
             val location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER)
-            if(location == null){
+            location?.let{
+                getAddressAsync(it)
+            }?.run{
                 Toast.makeText(requireContext(), getString(R.string.looks_like_location_disabled), Toast.LENGTH_SHORT).show()
-            } else {
-                getAddressAsync(location)
             }
         }
     }
@@ -246,7 +248,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
         launch(Dispatchers.IO) {
             try {
                 val addresses = geoCoder.getFromLocation(location.latitude, location.longitude, 1)
-                geoLocation.post { showAddressDialog(addresses[0].getAddressLine(0), location) }
+                geoLocation.post { showAddressDialog(addresses.first().getAddressLine(0), location) }
             }catch (e:IOException){
                 e.printStackTrace()
             }
@@ -255,9 +257,9 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
 
     private fun showAddressDialog(address: String, location: Location){
         activity?.let {
-            AlertDialog.Builder(it).setTitle("Ваш адрес").setMessage(address).setPositiveButton(""){_, _ ->
+            AlertDialog.Builder(it).setTitle(getString(R.string.your_adress)).setMessage(address).setPositiveButton(""){ _, _ ->
                 navigation.addFragment(SettingsFragment.newInstance(), true)
-            }.setNegativeButton("Закрыть") {dialog, _ -> dialog.dismiss() }.create().show()
+            }.setNegativeButton(getString(R.string.close)) { dialog, _ -> dialog.dismiss() }.create().show()
         }
     }
 

@@ -41,4 +41,6 @@
     <string name="start">Start Position</string>
     <string name="new_position">New Position</string>
     <string name="search_movie_location">Search Movie Location</string>
+    <string name="your_adress">Ваш адрес</string>
+    <string name="close">Закрыть</string>
 </resources>
