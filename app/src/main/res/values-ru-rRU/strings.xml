@@ -41,4 +41,7 @@
     <string name="start">Стартовая позиция</string>
     <string name="new_position">Новая позиция</string>
     <string name="search_movie_location">Указать локацию фильма</string>
+    <string name="your_adress">Ваш адрес</string>
+    <string name="close">Закрыть</string>
+    <string name="free_config">Бесплатная версия</string>
 </resources>

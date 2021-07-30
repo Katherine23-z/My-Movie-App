@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="map_api_key" translatable = "false">AIzaSyBbwdgXxwBWiSyjHKCsH3JeiF3WiZpvSsM</string>
+    <string name="genre">genre-beta</string>
+    <string name="title">Title-beta</string>
+    <string name="description">Description-beta</string>
+    <string name="year_of_release">year of Release-beta</string>
+    <string name="duration">duration-beta</string>
+    <string name="horrors">Horrors-beta</string>
+    <string name="thrillers">Thrillers-beta</string>
+    <string name="comedies">Comedies-beta</string>
+    <string name="fantastic">Fantastic-beta</string>
+    <string name="movie_poster">Movie Poster-beta</string>
+    <string name="add_recycler">//Add recyclerView-beta</string>
+    <string name="error">Error-beta</string>
+    <string name="loading">Loading-beta</string>
+    <string name="sucess">Success-beta</string>
+    <string name="search">Search-beta</string>
+    <string name="add">Add-beta</string>
+    <string name="delete">Delete-beta</string>
+    <string name="reload">reload-beta</string>
+    <string name="add_to_favourite">add to favourite-beta</string>
+    <string name="service_button">Service Button-beta</string>
+    <string name="settings">Settings-beta</string>
+    <string name="adult">Adult-beta</string>
+    <string name="is_adult">Is Adult-beta</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="content_provider">Content provider-beta</string>
+    <string name="Adult">ADULT-beta</string>
+    <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
+    <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Google Maps</string>
+    <string name="add_address">Add address-beta</string>
+    <string name="address">Address-beta</string>
+    <string name="map_mode">map_mode-beta</string>
+    <string name="normal">normal</string>
+    <string name="satellite">satellite</string>
+    <string name="terrain">terrain</string>
+    <string name="traffic">traffic</string>
+    <string name="start">Start Position-beta</string>
+    <string name="new_position">New Position-beta</string>
+    <string name="search_movie_location">Search Movie Location</string>
+    <string name="your_adress">Your address-beta</string>
+    <string name="close">Close-beta</string>
+    <string name="free_config">Free config</string>
+</resources>

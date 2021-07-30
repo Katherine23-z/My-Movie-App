@@ -20,10 +20,34 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("keystoreMovieApp.jks")
+            storePassword 'MovieApp'
+            keyAlias 'MovieApp'
+            keyPassword 'MovieApp'
+        }
+    }
+
+    buildTypes.each {
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("apikey.properties").newDataInputStream())
+        def apiKey  = properties.getProperty("keystore_password", "")
+        it.buildConfigField "String", "KEY_STORE_PASS", apiKey
+    }
+
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            versionNameSuffix "-debug"
+        }
+        beta {
+            initWith debug
+            versionNameSuffix "-beta"
         }
     }
     compileOptions {
@@ -36,6 +60,17 @@ android {
 
     buildFeatures{
         viewBinding true
+    }
+    flavorDimensions 'version'
+    productFlavors {
+        freeConfig {
+            dimension 'version'
+            versionNameSuffix '.free'
+        }
+        paidConfig {
+            dimension 'version'
+            versionNameSuffix '.paid'
+        }
     }
 }
 
