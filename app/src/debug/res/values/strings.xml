@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="map_api_key" translatable = "false">AIzaSyBbwdgXxwBWiSyjHKCsH3JeiF3WiZpvSsM</string>
+    <string name="genre">genre-debug</string>
+    <string name="title">Title-debug</string>
+    <string name="description">Description-debug</string>
+    <string name="year_of_release">year of Release-debug</string>
+    <string name="duration">duration-debug</string>
+    <string name="horrors">Horrors-debug</string>
+    <string name="thrillers">Thrillers-debug</string>
+    <string name="comedies">Comedies-debug</string>
+    <string name="fantastic">Fantastic-debug</string>
+    <string name="movie_poster">Movie Poster-debug</string>
+    <string name="add_recycler">//Add recyclerView-debug</string>
+    <string name="error">Error-debug</string>
+    <string name="loading">Loading-debug</string>
+    <string name="sucess">Success-debug</string>
+    <string name="search">Search-debug</string>
+    <string name="add">Add-debug</string>
+    <string name="delete">Delete-debug</string>
+    <string name="reload">reload-debug</string>
+    <string name="add_to_favourite">add to favourite-debug</string>
+    <string name="service_button">Service Button-debug</string>
+    <string name="settings">Settings-debug</string>
+    <string name="adult">Adult-debug</string>
+    <string name="is_adult">Is Adult-debug</string>
+    <string name="on">ON-debug</string>
+    <string name="off">OFF-debug</string>
+    <string name="content_provider">Content provider-debug</string>
+    <string name="Adult">ADULT-debug</string>
+    <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
+    <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Google Maps-debug</string>
+    <string name="add_address">Add address-debug</string>
+    <string name="address">Address-debug</string>
+    <string name="map_mode">map_mode-debug</string>
+    <string name="normal">normal</string>
+    <string name="satellite">satellite</string>
+    <string name="terrain">terrain</string>
+    <string name="traffic">traffic</string>
+    <string name="start">Start Position-debug</string>
+    <string name="new_position">New Position-debug</string>
+    <string name="search_movie_location">Search Movie Location-debug</string>
+    <string name="your_adress">Your address-debug</string>
+    <string name="close">Close-debug</string>
+    <string name="free_config">Free config</string>
+</resources>

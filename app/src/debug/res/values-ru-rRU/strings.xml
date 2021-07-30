@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="genre">жанр-дебаг</string>
+    <string name="title">заголовок-дебаг</string>
+    <string name="description">описание-дебаг</string>
+    <string name="year_of_release">год выпуска-дебаг</string>
+    <string name="duration">длительность-дебаг</string>
+    <string name="horrors">Ужасы-дебаг</string>
+    <string name="thrillers">Триллеры-дебаг</string>
+    <string name="comedies">Комедии-дебаг</string>
+    <string name="fantastic">Фантастика-дебаг</string>
+    <string name="movie_poster">Плакат фильма-дебаг</string>
+    <string name="add_recycler">Добавить ресайклервью-дебаг</string>
+    <string name="error">Ошибка-дебаг</string>
+    <string name="loading">Загрузка-дебаг</string>
+    <string name="sucess">Успех-дебаг</string>
+    <string name="search">Поиск-дебаг</string>
+    <string name="add">Добавить-дебаг</string>
+    <string name="delete">Удалить-дебаг</string>
+    <string name="reload">Перезагрузить-дебаг</string>
+    <string name="add_to_favourite">Добавить в избранное-дебаг</string>
+    <string name="service_button">Сервис-дебаг</string>
+    <string name="settings">Настройки-дебаг</string>
+    <string name="on">вкл-дебаг</string>
+    <string name="off">выкл-дебаг</string>
+    <string name="adult">Для взрослых-дебаг</string>
+    <string name="is_adult">взрослые-дебаг</string>
+    <string name="content_provider">Контент провайдер-дебаг</string>
+    <string name="Adult">Для взрослых-дебаг</string>
+    <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
+    <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Гугл Карты-дебаг</string>
+    <string name="add_address">Введите адрес-дебаг</string>
+    <string name="address">Адрес-дебаг</string>
+    <string name="map_mode">режим карты-дебаг</string>
+    <string name="normal">нормальный-дебаг</string>
+    <string name="satellite">спутник-дебаг</string>
+    <string name="terrain">схема-дебаг</string>
+    <string name="traffic">пробки-дебаг</string>
+    <string name="start">Стартовая позиция-дебаг</string>
+    <string name="new_position">Новая позиция-дебаг</string>
+    <string name="search_movie_location">Указать локацию фильма-дебаг</string>
+    <string name="your_adress">Ваш адрес-дебаг</string>
+    <string name="close">Закрыть-дебаг</string>
+    <string name="free_config">Бесплатная версия</string>
+</resources>

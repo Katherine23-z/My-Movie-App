@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <item
+            android:title="@string/map_mode"
+            android:id="@+id/menu_map_mode"
+            android:icon="@drawable/ic_baseline_assistant_direction_24"
+            android:orderInCategory="1"
+            app:showAsAction="ifRoom">
+
+        <menu>
+
+                <item
+                    android:title="@string/normal"
+                    android:id="@+id/menu_map_mode_normal"
+                    android:orderInCategory="1"
+                    tools:ignore = "AppCompatResource"
+                    />
+
+                <item
+                    android:title="@string/satellite"
+                    android:id="@+id/menu_map_mode_satellite"
+                    android:orderInCategory="2"
+                    tools:ignore = "AppCompatResource"
+                    />
+
+                <item
+                    android:title="@string/terrain"
+                    android:id="@+id/menu_map_mode_terrain"
+                    android:orderInCategory="1"
+                    tools:ignore = "AppCompatResource"
+                    />
+
+        </menu>
+        </item>
+
+        <item
+            android:title="@string/traffic"
+            android:id="@+id/menu_map_traffic"
+            android:icon="@drawable/ic_baseline_traffic_24"
+            app:showAsAction="ifRoom"
+            tools:ignore = "AppCompatResource"
+            />
+        </menu>

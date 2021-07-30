@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Application</string>
+    <string name="genre">жанр-бета</string>
+    <string name="title">заголовок-бета</string>
+    <string name="description">описание-бета</string>
+    <string name="year_of_release">год выпуска-бета</string>
+    <string name="duration">длительность-бета</string>
+    <string name="horrors">Ужасы-бета</string>
+    <string name="thrillers">Триллеры-бета</string>
+    <string name="comedies">Комедии-бета</string>
+    <string name="fantastic">Фантастика-бета</string>
+    <string name="movie_poster">Плакат фильма-бета</string>
+    <string name="add_recycler">Добавить ресайклервью</string>
+    <string name="error">Ошибка-бета</string>
+    <string name="loading">Загрузка-бета</string>
+    <string name="sucess">Успех-бета</string>
+    <string name="search">Поиск-бета</string>
+    <string name="add">Добавить-бета</string>
+    <string name="delete">Удалить-бета</string>
+    <string name="reload">Перезагрузить-бета</string>
+    <string name="add_to_favourite">Добавить в избранное</string>
+    <string name="service_button">Сервис-бета</string>
+    <string name="settings">Настройки-бета</string>
+    <string name="on">вкл</string>
+    <string name="off">выкл</string>
+    <string name="adult">Для взрослых-бета</string>
+    <string name="is_adult">взрослые-бета</string>
+    <string name="content_provider">Контент провайдер</string>
+    <string name="Adult">Для взрослых</string>
+    <string name="need_permission_to_find_location">Необходимо разрешение для определения местоположения</string>
+    <string name="looks_like_location_disabled">Возможно, выключена геолокация</string>
+    <string name="google_maps">Гугл Карты</string>
+    <string name="add_address">Введите адрес</string>
+    <string name="address">Адрес-бета</string>
+    <string name="map_mode">режим карты-бета</string>
+    <string name="normal">нормальный-бета</string>
+    <string name="satellite">спутник-бета</string>
+    <string name="terrain">схема-бета</string>
+    <string name="traffic">пробки-бета</string>
+    <string name="start">Стартовая позиция</string>
+    <string name="new_position">Новая позиция</string>
+    <string name="search_movie_location">Указать локацию фильма</string>
+    <string name="your_adress">Ваш адрес</string>
+    <string name="close">Закрыть</string>
+    <string name="free_config">Бесплатная версия</string>
+</resources>
